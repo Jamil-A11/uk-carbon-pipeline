@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: bronze
+    schema: main
+    tables:
+      - name: bronze_national_intensity
+      - name: bronze_regional_intensity

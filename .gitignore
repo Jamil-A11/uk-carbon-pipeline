@@ -3,3 +3,5 @@ data/
 __pycache__/
 *.duckdb
 scratch.py
+dbt/target/
+dbt/logs/

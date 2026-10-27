@@ -1,0 +1,10 @@
+name: carbon
+version: "1.0.0"
+profile: carbon
+
+model-paths: ["models"]
+
+models:
+  carbon:
+    silver:
+      +materialized: table
