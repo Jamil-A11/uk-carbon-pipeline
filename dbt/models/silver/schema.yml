@@ -35,3 +35,6 @@ models:
       - name: region_id
         data_tests:
           - not_null
+      - name: is_aggregate          # ← NEW
+        data_tests:
+          - not_null
