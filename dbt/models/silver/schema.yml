@@ -38,3 +38,16 @@ models:
       - name: is_aggregate          # ← NEW
         data_tests:
           - not_null
+
+  - name: silver_regional_generation_mix
+    data_tests:
+      - unique:
+          arguments:
+            column_name: "concat(region_id, '-', from_ts, '-', fuel)"
+    columns:
+      - name: fuel
+        data_tests:
+          - not_null
+      - name: generation_pct
+        data_tests:
+          - not_null
