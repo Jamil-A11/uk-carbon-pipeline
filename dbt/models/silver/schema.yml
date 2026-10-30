@@ -2,6 +2,7 @@ version: 2
 
 models:
   - name: silver_national_intensity
+    description: "Cleaned national carbon intensity for September 2026 (UTC), one row per half-hour, with timestamps converted from text and columns renamed."
     columns:
       - name: from_ts
         data_tests:
@@ -24,6 +25,7 @@ models:
                 values: ['very low', 'low', 'moderate', 'high', 'very high']
 
   - name: silver_regional_intensity
+    description: "Cleaned regional carbon intensity forecasts for September 2026 (UTC), one row per region per half-hour, with boundary duplicates removed and aggregate rows (England, Scotland, Wales, GB) flagged by is_aggregate."
     data_tests:
       - unique:
           arguments:
@@ -35,11 +37,12 @@ models:
       - name: region_id
         data_tests:
           - not_null
-      - name: is_aggregate          # ← NEW
+      - name: is_aggregate
         data_tests:
           - not_null
 
   - name: silver_regional_generation_mix
+    description: "Generation mix unpacked from silver_regional_intensity, one row per fuel per region per half-hour, giving each fuel's percentage share of generation."
     data_tests:
       - unique:
           arguments:
