@@ -22,3 +22,16 @@ models:
           - accepted_values:
               arguments:
                 values: ['very low', 'low', 'moderate', 'high', 'very high']
+
+  - name: silver_regional_intensity
+    data_tests:
+      - unique:
+          arguments:
+            column_name: "concat(region_id, '-', from_ts)"
+    columns:
+      - name: from_ts
+        data_tests:
+          - not_null
+      - name: region_id
+        data_tests:
+          - not_null
