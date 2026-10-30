@@ -23,3 +23,5 @@ ranked AS (
 SELECT * EXCLUDE (row_num)
 FROM ranked
 WHERE row_num = 1
+    AND from_ts >= TIMESTAMP '2026-09-01 00:00:00'
+    AND from_ts < TIMESTAMP '2026-10-01 00:00:00'

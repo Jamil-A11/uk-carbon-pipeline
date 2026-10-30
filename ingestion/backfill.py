@@ -38,7 +38,7 @@ def save_day(payload, date_str, folder):
 
 def main():
     start = date(2026, 9, 1)
-    end = date(2026, 9, 30)
+    end = date(2026, 10, 1)
     current = start
     while current <= end:
         date_str = current.isoformat()
