@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: dim_region
+    description: "One row per region, including the 4 aggregates (England, Scotland, Wales, GB). Primary key: region_id."
+    columns:
+      - name: region_id
+        data_tests:
+          - not_null
+          - unique

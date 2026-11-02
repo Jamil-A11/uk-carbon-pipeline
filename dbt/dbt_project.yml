@@ -8,3 +8,5 @@ models:
   carbon:
     silver:
       +materialized: table
+    gold:
+      +materialized: table
