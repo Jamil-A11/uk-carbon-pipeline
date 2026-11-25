@@ -16,3 +16,15 @@ models:
         data_tests:
           - not_null
           - unique
+
+  - name: fact_national_intensity
+    description: "One row per half-hour (GB-wide): forecast, actual, forecast error and intensity label. Foreign key: from_ts → dim_time."
+    columns:
+      - name: from_ts
+        data_tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('dim_time')
+                field: from_ts
