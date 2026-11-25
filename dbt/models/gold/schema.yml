@@ -8,3 +8,11 @@ models:
         data_tests:
           - not_null
           - unique
+
+  - name: dim_time
+    description: "One row per half-hour in September 2026, with UK clock time, day of week and weekend flag. Primary key: from_ts (UTC)."
+    columns:
+      - name: from_ts
+        data_tests:
+          - not_null
+          - unique
